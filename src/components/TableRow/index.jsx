@@ -1,20 +1,19 @@
 import React from "react";
 
-const TableRow = () => {
+const TableRow = ({data, index, deleteItem}) => {
   return (
-    <tr>
-      <td class="id">No data</td>
-      <td class="supplierId">No data</td>
-      <td class="categoryId">No data</td>
-      <td class="quantityPerUnit">No data</td>
-      <td class="unitPrice">No data</td>
-      <td class="unitsInStock">No data</td>
-      <td class="unitsOnOrder">No data</td>
-      <td class="reorderLevel">No data</td>
-      <td class="discontinued">No data</td>
-      <td class="name">No data</td>
+    <tr key={index}>
+      <td className="id">{data.id}</td>
+      {/* <td className="supplierId">{data.supplierId}</td> */}
+      {/* <td className="categoryId">{data.categoryId}</td> */}
+      <td className="quantityPerUnit">{data.quantityPerUnit}</td>
+      <td className="unitPrice">{data.unitPrice}</td>
+      <td className="unitsInStock">{data.unitsInStock}</td>
+      {/* <td className="unitsOnOrder">{data.unitsOnOrder}</td> */}
+      {/* <td className="reorderLevel">{data.reorderLevel}</td> */}
+      <td className="name">{data.name}</td>
       <td>
-        <button class="btn btn-danger delete-button">Delete</button>
+        <button className="btn btn-danger delete-button" onClick={()=>{deleteItem(data.id)}}>Delete</button>
       </td>
     </tr>
   );
